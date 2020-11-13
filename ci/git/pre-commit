@@ -1,0 +1,4 @@
+#!/bin/sh
+
+php artisan version:timestamp
+git add config/version.yml

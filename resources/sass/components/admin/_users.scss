@@ -1,0 +1,28 @@
+.form-group-capabilities-admin {
+    font-weight: bold;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $body-bg;
+}
+
+.form-group-capabilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+
+    .form-check-inline {
+        display: inline-flex;
+        white-space: nowrap;
+        flex-basis: 25%;
+        margin: 0;
+        padding-right: 1rem;
+        padding-bottom: 0.5rem;
+
+        input:disabled {
+            opacity: 0.5;
+
+            + label {
+                opacity: 0.5;
+            }
+        }
+    }
+}

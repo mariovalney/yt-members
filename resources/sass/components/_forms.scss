@@ -1,0 +1,14 @@
+form {
+    .card-body {
+        padding-bottom: .25rem;
+    }
+
+    .error {
+        color: $red;
+    }
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
