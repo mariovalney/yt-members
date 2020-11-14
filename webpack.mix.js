@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 
-// require('laravel-mix-imagemin');
+require('laravel-mix-imagemin');
 
 mix.js('resources/js/app.js', 'public/js');
 mix.js('resources/js/browserSync.js', 'public/js');
@@ -13,7 +13,7 @@ mix.styles(vendorCss, 'public/css/vendor.css');
 
 mix.sass('resources/sass/app.scss', 'public/css');
 
-// mix.imagemin('images');
+mix.imagemin('images');
 
 mix.browserSync({
     open: false,

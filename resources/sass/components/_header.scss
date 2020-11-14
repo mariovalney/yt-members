@@ -1,5 +1,21 @@
 header {
     .c-header-brand {
         text-decoration: none !important;
+        font-weight: bold;
+    }
+
+    .dropdown-menu {
+        .dropdown-item {
+            vertical-align: middle;
+
+            i {
+                top: 2px;
+                position: relative;
+            }
+
+            &:active {
+                color: $white !important;
+            }
+        }
     }
 }

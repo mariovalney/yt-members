@@ -1,0 +1,48 @@
+body.page-login {
+    .card {
+        flex-basis: 45%;
+        min-width: 340px;
+    }
+
+    .card-privacy {
+        flex-basis: 55%;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+        p {
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .privacy-text {
+            max-width: 250px;
+            margin-top: 3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card-group {
+            flex-direction: column;
+
+            .card {
+                flex-basis: 100% !important;
+                margin-bottom: 0;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .card-privacy {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+    }
+}

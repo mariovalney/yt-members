@@ -8,7 +8,7 @@
     @php
         printf(
             __('Recarregue a página ou vá até a %s.'),
-            '<a href="' . route('admin.index') . '">' . __( 'página inicial' ) . '</a>'
+            '<a href="' . route('index') . '">' . __( 'página inicial' ) . '</a>'
         );
     @endphp
 @endsection

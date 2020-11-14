@@ -8,7 +8,7 @@
     @php
         printf(
             __('Tente fazer %s.'),
-            '<a href="' . route('login') . '">' . __( 'login novamente' ) . '</a>'
+            '<a href="' . route('auth.login') . '">' . __( 'login novamente' ) . '</a>'
         );
     @endphp
 @endsection

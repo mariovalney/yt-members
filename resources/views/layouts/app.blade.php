@@ -23,7 +23,23 @@
                 <a class="c-header-brand c-header-brand-sm-up-center" href="{{ route('index') }}">
                     {{ config('app.name') }}
                 </a>
-                <div class="mfs-auto"></div>
+                @if (! empty($user))
+                    <ul class="c-header-nav mfs-auto">
+                        <li class="c-header-nav-item dropdown">
+                            <a class="c-header-nav-link mr-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <div class="c-avatar">
+                                    <img class="c-avatar-img" src="{{ $user->avatar }}">
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right pt-0 pb-0">
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}">
+                                    <i class="c-icon icon-logout mfe-2"></i>
+                                    <span>@lang('auth.google.logout')</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                @endif
             </header>
 
             <div class="c-body">
@@ -42,19 +58,19 @@
                 </div>
             </footer>
         </div>
+
+        <!-- jQuery 3.1.1 -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+
+        @livewireScripts
+
+        <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+        @if(config('app.debug'))
+            <script type="text/javascript" src="{{ mix('js/browserSync.js') }}"></script>
+        @endif
+
+        @stack('scripts')
     </body>
-
-    <!-- jQuery 3.1.1 -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-
-    @livewireScripts
-
-    <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
-    @if(config('app.debug'))
-        <script type="text/javascript" src="{{ mix('js/browserSync.js') }}"></script>
-    @endif
-
-    @stack('scripts')
 </html>
