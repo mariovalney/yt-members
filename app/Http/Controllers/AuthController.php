@@ -15,10 +15,12 @@ class AuthController extends Controller
     public function login()
     {
         $scopes = [
+            'openid',
+            'https://www.googleapis.com/auth/userinfo.email',
             'https://www.googleapis.com/auth/youtube.channel-memberships.creator',
         ];
 
-        return Socialite::driver('google')->scopes($scopes)->redirect();
+        return Socialite::driver('google')->scopes($scopes)->with(['prompt' => 'select_account'])->redirect();
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Auth\GoogleUser;
+use App\Services\YouTubeApi;
 
 class PageController extends Controller
 {
@@ -11,11 +12,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(YouTubeApi $api)
     {
         $user = GoogleUser::retrieve();
         if ($user->isValid()) {
-            return view('index')->with('user', $user);
+            return view('index')->with([
+                'user' => $user,
+                'members' => $api->getMembers(),
+            ]);
         }
 
         return redirect(route('login'));
